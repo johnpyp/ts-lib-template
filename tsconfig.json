@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Recommended",
+  "extends": "@tsconfig/node14/tsconfig.json",
+  "compilerOptions": {
+    // Make the compiler stricter, catch more errors
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    // We handle these with ESLint:
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+
+    // Output
+    "importHelpers": true,
+
+    // DX
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.cache/.tsbuildinfo",
+    "noErrorTruncation": true,
+    "baseUrl": "./"
+  },
+  "include": ["src", "tests", "scripts"],
+  // Prevent unwanted things like auto-import from built modules
+  "exclude": ["dist-*", "dist"]
+}
